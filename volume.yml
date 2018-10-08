@@ -1,0 +1,25 @@
+- name: Volume
+
+  hosts: localhost
+
+  gather_facts: false
+
+  tasks:
+
+  - name: openstack volume | create volume
+    os_volume:
+      state: present
+
+      auth:
+
+         username: admin
+
+         password: NCSp@ssw0rd
+
+         project_name: admin
+
+         domain_name: default
+
+         auth_url: http://192.168.235.90:5000/v3
+      size: 2
+      display_name: "AnsibleVolume3"
